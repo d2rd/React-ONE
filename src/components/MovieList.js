@@ -37,31 +37,31 @@ handleSubmit(event) {
     id: this.getNextId(), 
     title: this.state.movieTitle,
   };
- //const existingMoview =[...movies]; // This may be 'rest' operator instead of spread
+ //const existingMovie =[...movies]; // This may be 'rest' operator instead of spread
   
   // research 'spread' operator and 'rest' operator
   const newMovies = [...this.state.movies, newMovie]; //PREFERRED SYNTAX uses '...' spread operator
-  // console.log('newMovies',newMovies);
-// console.log('input value', event.target.value)
-// console.log('state value', this.state.movieTitle)
-  // this.setState({ movies: newMovies});
+      // console.log('newMovies',newMovies);
+    // console.log('input value', event.target.value)
+    // console.log('state value', this.state.movieTitle)
+      // this.setState({ movies: newMovies});
    this.setState({ movieTitle: event.target.value}); 
   }
 removeMovie = id => {
-  const newMovies = this.state.movies.filter(movie =>
+  const newMovies = this.state.movies.filter(movie => {
   return movie.id !== id; 
 });
-this.setState({ movies: NewMovies });
+this.setState({ movies: newMovies });
 };
   render() {
     return (
       <div className="movie-list">
         <form onSubmit={this.handleSubmit}>
         <label htmlFor="title">Title: </label>
-        {<div>{this.state.msg}</div>
+        <div>{this.state.msg}</div>
         <button onClick={() => {this.setState({msg: 'it shows'})}}>Go</button>
         <h1>{this.props.heading}</h1>
-        <h2>{this.state.message}</h2>}
+        <h2>{this.state.message}</h2>
         </form>
         <ul>
           {this.state.movies.map(movie => {

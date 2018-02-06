@@ -9,12 +9,12 @@ function Movie(props) {
       >
         Delete
       </button>{' '}
-      {props.movie.title
+      {props.movie.title}
     </li>
-      }
-        }
-  )
-}
+      
+  )};
+  
+
 function Movie(props) {
   return <li>{props.movie.title}</li>;
 }
